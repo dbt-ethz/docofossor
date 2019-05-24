@@ -36,7 +36,7 @@ The values after line 10 of the `df[]` list hold the z-values of the digital ter
 
 ## Components
 
-Docofossor is using IronPython within Rhino Grasshopper to make the calculations. The components are separated in categories in the Grasshopper toolbar. For now, there are five categories comprising *Grid*, *Relative Operations*, *Absolute Operations*, *Analysis*, and *Geometry*. They are made available as a set of open source UserObjects for Grasshopper. Use the list below to jump to the respective component descriptions.
+Docofossor is using IronPython within Rhino Grasshopper to make the calculations. The components are separated in categories in the Grasshopper toolbar. For now, there are seven categories comprising *I/O*, *Grid*, *Operations Relative*, *Operations Absolute*, *Generative*, *Analysis*, and *Geometry*. They are made available as a set of components for Rhino Grasshopper. Use the list below to jump to the respective component descriptions.
 
 * __I/O__
   * [dfEmptyGrid](#-dfemptygrid)
