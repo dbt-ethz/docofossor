@@ -487,7 +487,7 @@ Calculates the shortest path between to points.
 |dsts|list of distance values for each cell to the target.
 |route|a list of tuples along the path, format: (distance, ix, iy)
 
-#### ![img](/img/icons/dfSlopeVector.png) dfSlopeVector
+#### ![img](/img/dfSlopeVector.png) dfSlopeVector
 Calculates the gradient direction vectors.
 
 |Inputs|Description|
@@ -496,7 +496,7 @@ Calculates the gradient direction vectors.
 |__Output__||
 |a|List of gradient vectors, magnitude corresponding to slope
 
-#### ![img](/img/icons/dfViewshed.png) dfViewshed
+#### ![img](/img/dfViewshed.png) dfViewshed
 Analyses the visibilty (3d viewshed) from a given start point.
 
 |Inputs|Description|
