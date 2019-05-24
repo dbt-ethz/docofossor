@@ -125,6 +125,36 @@ Creates the Docofossor distance field from points on a regular grid.
 |__Output__||
 |df|The Docofossor list
 
+#### ![img](/img/dfImportXYZ.png "jh") dfImportXYZ
+
+The *Import XZY* component imports a text file to a *df* list that has topographic data stored as a list of x, y, and z values separated by whitespace characters. Each point should start at a new line.
+
+|Input|Description|
+|--|--|
+|f|The filepath to the xyz-file (it will also take txt files)
+|n|Number of rows and columns to skip (every n-th r/c)
+|sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|__Output__||
+|df|The Docofossor list
+
+#### ![img](/img/dfExportDF.png) dfExportDF
+Writes a new .df file containing the dimensions and z-values of the docofossor list in global coordinates.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|f|The name of the file
+|w|Use a boolean button, set to true to start writing
+
+#### ![img](/img/dfExportXYZ.png) dfExportXYZ
+Writes a new XYZ file of the point locations in global coordinates.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|f|The name of the file
+|w|Use a boolean button, set to true to start writing
 
 ### Grid
 
@@ -160,18 +190,7 @@ Creates the Docofossor distance field from points on a regular grid.
 
 
 
-#### ![img](/img/icons/dfImportXYZ.png "jh") dfImportXYZ
 
-The *Import XZY* component imports a text file to a *df* list that has topographic data stored as a list of x, y, and z values separated by whitespace characters. Each point should start at a new line.
-
-|Input|Description|
-|--|--|
-|f|The filepath to the xyz-file (it will also take txt files)
-|n|Number of rows and columns to skip (every n-th r/c)
-|sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
-|sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
-|__Output__||
-|df|The Docofossor list
 
 
 
@@ -236,23 +255,9 @@ Sets the Docofossor grid back to the original global coordinates
 |__Output__||
 |df|The Docofossor list in global coordinates
 
-#### ![img](/img/icons/dfExportASC.png) dfExportASC
-Writes a new ASC file of the point locations in global coordinates.
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list to work on
-|f|The name of the file
-|w|Use a boolean button, set to true to start writing
 
-#### ![img](/img/icons/dfExportXYZ.png) dfExportXYZ
-Writes a new XYZ file of the point locations in global coordinates.
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list to work on
-|f|The name of the file
-|w|Use a boolean button, set to true to start writing
 
 ### Relative Operations
 
