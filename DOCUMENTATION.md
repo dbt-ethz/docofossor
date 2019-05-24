@@ -375,7 +375,7 @@ Creates a trapezoidal cut and fill along path curves.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The balanced volume delta
 
-#### ![img](/img/icons/dfCutInPath.png) dfCutInPath
+#### ![img](/img/dfCutInPath.png) dfCutInPath
 Creates a trapezoidal cut along path curves.
 
 |Inputs|Description|
