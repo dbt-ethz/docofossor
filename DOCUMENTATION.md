@@ -178,7 +178,7 @@ Shifts the Docofossor grid in local coordinates. If left blank the grid origin w
 |__Output__||
 |df|The Docofossor list with the new origin
 
-#### ![img](/img/icons/dfGridCompare.png) dfGridCompare
+#### ![img](/img/dfGridCompare.png) dfGridCompare
 Compares two terrains (lists of Z-values) with each other.
 
 |Inputs|Description|
@@ -240,7 +240,7 @@ Crops the grid to a curve (bounding box), for faster operation
 |__Output__||
 |df|The new Docofossor list of grid-dimensions and Z-values
 
-#### ![img](/img/icons/dfGridSmooth.png) dfGridSmooth
+#### ![img](/img/dfGridSmooth.png) dfGridSmooth
 Smoothens a landscape by applying a 2D Gaussian convolution kernel.
 
 |Inputs|Description|
