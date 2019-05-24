@@ -403,7 +403,7 @@ Creates a trapezoidal fill along path curves.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
-#### ![img](/img/icons/dfCutFillInSurface.png) dfCutFillInSurface
+#### ![img](/img/dfCutFillInSurface.png) dfCutFillInSurface
 Fits the landscape to a given surface by pulling the points (both cut and fill) and connects to the surrounding terrain using a slope.
 
 |Inputs|Description|
