@@ -335,88 +335,7 @@ Creates a relative fill within a boundary curve.
 
 ### Operations Absolute
 
-"""Creates a trapezoidal cut and fill along path curves.
-    Inputs:
-        df: Docofossor list to work on
-        crv: A list of path curves
-        sa: Slope angle (default = 33 degrees)
-        w: Width at the bottom/top of the cut/fill tool
-        d: Maximum cutting distance from the curve (default = 30)
-    Output:
-        df: Docofossor list of grid-dimensions and Z-values
-        vol: The balanced volume delta"""
-
-
-
-
-
-
-
-
-
-
-
-
-### Generative
-
-### Analysis
-
-### Geometry
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*************************************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Relative Operations
-
-
-
-
-
-
-
-
-
-
-### Absolute Operations
-
-#### ![img](/img/icons/dfCutInPoint.png) dfCutInPoint
+#### ![img](/img/dfCutInPoint.png) dfCutInPoint
 Creates an excavation in a point as a sine curve (absolute).
 
 |Inputs|Description|
@@ -424,83 +343,136 @@ Creates an excavation in a point as a sine curve (absolute).
 |df|Docofossor list to work on
 |pt|Excavation location (point3D)
 |sa|Slope angle
-|method|Boolean toggle between sine-deposition and relative-sine-deposition
+|d|Maximum cut distance from the point (default = 10)
 |__Output__||
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
-#### ![img](/img/icons/dfCutInPath.png) dfCutInPath
-
-Creates a rectangular carving along a path curve.
+#### ![img](/img/dfFillInPoint.png) dfFillInPoint
+Creates a deposition in a point (absolute).
 
 |Inputs|Description|
 |-|-|
 |df|Docofossor list to work on
-|crv|The path curve
-|w|Total width of the carving tool
-|d|Maximum depth at the center
+|pt|Fill location (point3D)
+|sa|Slope angle (default = 33)
+|d|Maximum fill distance from the point (default = 10)
 |__Output__||
-|df|Docofossor list of grid-dimensions and Z-values
+|df|The Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
-#### ![img](/img/icons/dfCutInPaths.png) dfCutInPaths
+#### ![img](/img/dfCutFillInPath.png) dfCutFillInPath
+Creates a trapezoidal cut and fill along path curves.
 
-Creates a trapezoidal carving (slope angle) along several path curves.
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|crv|A list path curves
+|sa|Slope angle (default = 33 degrees)
+|w|Width at the bottom/top of the cut/fill tool
+|d|Maximum cutting distance from the curve (default = 30)
+|__Output__||
+|df|Docofossor list of grid-dimensions and Z-values
+|vol|The balanced volume delta
+
+#### ![img](/img/icons/dfCutInPath.png) dfCutInPath
+Creates a trapezoidal cut along path curves.
 
 |Inputs|Description|
 |-|-|
 |df|Docofossor list to work on
 |crv|A list of path curves
-|sa|Slope angle
 |wb|Width at the bottom of the carving tool
+|sa|Slope angle (default = 33 degrees)
+|d|Maximum cutting distance from the curve (default = 30)
 |__Output__||
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
-#### ![img](/img/icons/dfCutInSurface.png) dfCutInSurface
->coming soon
-
-#### ![img](/img/icons/dfFillInPoint.png) dfFillInPoint
-Creates a deposition in a point as a sine curve (absolute).
+#### ![img](/img/dfFillInPath.png) dfFillInPath
+Creates a trapezoidal fill along path curves.
 
 |Inputs|Description|
 |-|-|
 |df|Docofossor list to work on
-|pt|Deposition location (point3D)
-|sa|Slope angle
-|method|Boolean toggle between sine-deposition and relative-sine-deposition
+|crv|A list of path curves
+|wt|Width at the top of the carving tool
+|sa|Slope angle (default = 33 degrees)
+|d|Maximum cutting distance from the curve (default = 30)
 |__Output__||
-|df|The Docofossor list of grid-dimensions and Z-values
+|df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
-#### ![img](/img/icons/dfFillInPath.png) dfFillInPath
-> coming soon
-
-#### ![img](/img/icons/dfFillInSurface.png) dfFillInSurface
-> coming soon
-
-#### ![img](/img/icons/dfCutFillInPath.png) dfCutFillInPath
-> coming soon
-
 #### ![img](/img/icons/dfCutFillInSurface.png) dfCutFillInSurface
-
-Fits the landscape to a given surface by pulling the points (both cut and fill) and connects to the surrounding with a slope.
+Fits the landscape to a given surface by pulling the points (both cut and fill) and connects to the surrounding terrain using a slope.
 
 |Inputs|Description|
 |-|-|
 |df|Docofossor list to work on
 |srf|The surface to drag the points to
-|sa|Slope angle
+|sa|Slope angle (default = 33 degrees)
+|d|Maximum cutting distance from the curve (default = 30)
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
-|vol|The volume delta
+|vol|The balanced volume delta
 
+#### ![img](/img/dfCutInSurface.png) dfCutInSurface
+Fits the landscape to a given surface by pulling the points (cut) and connects to the surrounding terrain using a slope.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|srf|The surface to drag the points to
+|sa|Slope angle (default = 33 degrees)
+|d|Maximum cutting distance from the curve (default = 30)
+|__Output__||
+|df|The new list of grid-dimensions and Z-values
+|vol|The balanced volume delta
+
+#### ![img](/img/dfFillInSurface.png) dfFillInSurface
+Fits the landscape to a given surface by pulling the points (fill) and connects to the surrounding terrain using a slope.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|srf|The surface to drag the points to
+|sa|Slope angle (default = 33 degrees)
+|d|Maximum cutting distance from the curve (default = 30)
+|__Output__||
+|df|The new list of grid-dimensions and Z-values
+|vol|The balanced volume delta
+
+### Generative
+
+#### ![img](/img/dfNoise.png) dfNoise
+Volumentric displacement using Perlin Noise.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|crv|A list of closed curves as boundary region
+|wl|The wavelength (Default = 16)
+|a|The amplitude (Default = 4)
+|s|The smoothing distance from the curve (Default = 8)
+|__Output__||
+|df|The new list of grid-dimensions and Z-values
+
+#### ![img](/img/dfSineWave.png) dfSineWave
+Volumentric displacement by a sine formula.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|crv|A list of closed curves as boundary region
+|wl|The wavelength (Default = 16)
+|a|The amplitude (Default = 4)
+|s|The smoothing distance from the curve (Default = 8)
+|__Output__||
+|df|The new list of grid-dimensions and Z-values
+       
 ### Analysis
 
-
-
-#### ![img](/img/icons/dfShortestPath.png) dfShortestPath
-
+#### ![img](/img/dfShortestPath.png) dfShortestPath
 Calculates the shortest path between to points.
 
 |Inputs|Description|
@@ -515,7 +487,7 @@ Calculates the shortest path between to points.
 |dsts|list of distance values for each cell to the target.
 |route|a list of tuples along the path, format: (distance, ix, iy)
 
-#### ![img](/img/icons/dfSlopeGradientVector.png) dfSlopeGradientVector
+#### ![img](/img/icons/dfSlopeVector.png) dfSlopeVector
 Calculates the gradient direction vectors.
 
 |Inputs|Description|
@@ -536,32 +508,9 @@ Analyses the visibilty (3d viewshed) from a given start point.
 |va|List of visibilities (Boolean) for each point.
 |spt|Point object indicating the actual position used for calculation (debugging).
 
-#### ![img](/img/icons/dfHeightmapShader.png) dfHeightmapShader
-Creates a Mesh texture gradient where the lowest faces are colored black, and the highest are colored white.
-
-|Inputs|Description|
-|-|-|
-|m|The mesh coming from the dfGridMesh component.
-> For now, this component contains a Cluster of native Grasshopper components. Double click to adjust the parameters within the Cluster. This component will be rewritten in Python to take advantage of the Docofossor distance field.
-
-#### ![img](/img/icons/dfHillShader.png) dfHillShader
-Creates a Mesh texture gradient that simulates face-exposure coming from the sun. Full exposure will be colored white, no exposure black.
-
-|Inputs|Description|
-|-|-|
-|m|The mesh coming from the dfGridMesh component.
-> For now, this component contains a Cluster of native Grasshopper components. Double click to adjust the parameters within the Cluster. This component will be rewritten in Python to take advantage of the Docofossor distance field.
-
-#### ![img](/img/icons/dfSlopeShader.png) dfSlopeShader
-Creates a Mesh texture where any mesh-face over 33% slope is colored red.
-
-|Inputs|Description|
-|-|-|
-|m|The mesh coming from the dfGridMesh component.
-> For now, this component contains a Cluster of native Grasshopper components. Double click to adjust the parameters within the Cluster. This component will be rewritten in Python to take advantage of the Docofossor distance field.
-
 ### Geometry
-#### ![img](/img/icons/dfGridMesh.png) dfGridMesh
+
+#### ![img](/img/dfGridMesh.png) dfGridMesh
 
 Creates a mesh of quads on the point grid.
 
@@ -571,7 +520,7 @@ Creates a mesh of quads on the point grid.
 |__Output__||
 |m|The newly created mesh
 
-#### ![img](/img/icons/dfGridPoints.png) dfGridPoints
+#### ![img](/img/dfGridPoints.png) dfGridPoints
 
 Creates points from z values and grid dimensions
 
