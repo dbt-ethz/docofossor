@@ -4,7 +4,7 @@
 
 # Docofossor
 
-Docofossor is a collection of landscape modeling components in 2.5D with distance functions. It is used as a component library for [Rhino 3D](https://www.rhino3d.com/) [Grasshopper](https://www.grasshopper3d.com/). It is developed to model cut and fill operations by a robotic excavator in landscape architectural design. It allows a continues transformation of the topography by point, path, area  or surface on a digital terrain model (DTM). It is written in Python and free tu use (MIT License).
+Docofossor is a collection of landscape modeling components in 2.5D with distance functions. It is used as a component library for [Rhino 3D](https://www.rhino3d.com/) [Grasshopper](https://www.grasshopper3d.com/). It is developed to model cut and fill operations by a robotic excavator in landscape architectural design. It allows a continues transformation of the topography by point, path, area  or surface on a digital terrain model (DTM). It is written in Python and free to use (MIT License).
 
 ## Getting started
 
@@ -12,14 +12,16 @@ Docofossor is a collection of landscape modeling components in 2.5D with distanc
 * [Rhinoceros 3D 6.0](http://www.rhino3d.com/)
 
 ### Installation
-`TODO: file > special folders > components, then copy the .ghpy file there`
+`In the grasshopper window, go to file > special folders > components, then copy the .ghpy file there`
+
+[toolbar]: /img/df_toolbar.png "Docofossor Toolbar"
 
 ### Documentation
 Click here for the full [documentation](/DOCUMENTATION.md) of all the components of Docofossor.
 
 ### Changelog
 
-* May 2019: 'Initial Release of Docofossor v 0.9'
+* May 24, 2019: 'Initial Release of Docofossor v 0.9'
 
 ## Authors
 
