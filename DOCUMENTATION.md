@@ -249,14 +249,113 @@ Smoothens a landscape by applying a 2D Gaussian convolution kernel.
 |rad|The radius of the kernel (5 if not specified)
 |__Output__||
 |df|The new Docofossor list of grid-dimensions and z-values
-
-
-        
-        
-
+    
 ### Operations Relative
 
+#### ![img](/img/dfCutOnPoint.png) dfCutOnPoint
+Creates a cut on a point as a sine curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|pt|Excavation location (point3D)
+|mxd|Maximum depth
+|sa|Slope angle (default = 33 degrees)
+|method|Boolean toggle between sine-deposition and relative-deposition
+|__Output__||
+|df|Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
+#### ![img](/img/dfFillOnPoint.png) dfFillOnPoint
+Creates a fill on a point as a sine curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list of grid-dimensions and Z-values to work on
+|pt|Fill location (point3D)
+|mxh|Maximum height
+|sa|Slope angle (default = 33 degrees)
+|__Output__||
+|df|Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
+#### ![img](/img/dfCutOnPath.png) dfCutOnPath
+Creates a relative cut along a path curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|crv|The path curve
+|mxd|Maximum depth at the center
+|w|Width at the top of the cutting tool
+sa: Slope angle (default = 33 degrees)
+|__Output__||
+|df|Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
+#### ![img](/img/dfFillOnPath.png) dfFillOnPath
+Creates a relative fill along a path curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|crv|The path curve
+|mxd|Maximum height at the center
+|w|Width at the bottom of the fill tool
+sa: Slope angle (default = 33 degrees)
+|__Output__||
+|df|Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
+#### ![img](/img/dfCutOnArea.png) dfCutOnArea
+Creates a relative cut within a boundary curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list of Z-values to work on
+|crv|The boundary curve
+|mxd|Maximum depth
+|sa|Slope angle (defaul = 33 degrees)
+|__Output__||
+|df|The Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
+#### ![img](/img/dfFillOnArea.png) dfFillOnArea
+Creates a relative fill within a boundary curve.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list of Z-values to work on
+|crv|The boundary curve
+|mxh|Maximum height
+|sa|Slope angle (default = 33 degrees)
+|__Output__||
+|df|The Docofossor list of grid-dimensions and Z-values
+|vol|The volume delta
+
 ### Operations Absolute
+
+"""Creates a trapezoidal cut and fill along path curves.
+    Inputs:
+        df: Docofossor list to work on
+        crv: A list of path curves
+        sa: Slope angle (default = 33 degrees)
+        w: Width at the bottom/top of the cut/fill tool
+        d: Maximum cutting distance from the curve (default = 30)
+    Output:
+        df: Docofossor list of grid-dimensions and Z-values
+        vol: The balanced volume delta"""
+
+
+
+
+
+
+
+
+
+
+
 
 ### Generative
 
@@ -306,82 +405,14 @@ Smoothens a landscape by applying a 2D Gaussian convolution kernel.
 
 ### Relative Operations
 
-#### ![img](/img/icons/dfCutOnPoint.png) dfCutOnPoint
-Creates an excavation on a point as a sine curve.
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list to work on
-|pt|Excavation location (point3D)
-|mxd|Maximum depth
-|sa|Slope angle
-|method|Boolean toggle between sine-deposition and relative-deposition
-|__Output__||
-|df|Docofossor list of grid-dimensions and Z-values
-|vol|The volume delta
 
-#### ![img](/img/icons/dfCutOnPath.png) dfCutOnPath
-Creates an excavation along a path curve.
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list to work on
-|crv|The path curve
-|wt|Width at the top of the carving tool
-|wb|Width at the bottom of the carving tool
-|d|Maximum depth at the center
-|__Output__||
-|df|Docofossor list of grid-dimensions and Z-values
-|vol|The volume delta
 
-#### ![img](/img/icons/dfCutOnArea.png) dfCutOnArea
-> coming soon
 
-#### ![img](/img/icons/dfFillOnPoint.png) dfFillOnPoint
-Creates a deposition on a point as a sine curve (relative).
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list of grid-dimensions and Z-values to work on
-|pt|Deposition location (point3D)
-|mxh|Maximum height
-|sa|Slope angle
-|method|Boolean toggle between sine-deposition and relative-deposition
-|__Output__||
-|df|The Docofossor list of grid-dimensions and Z-values
-|vol|The volume delta
 
-#### ![img](/img/icons/dfFillOnPath.png) dfFillOnPath
-> coming soon
 
-#### ![img](/img/icons/dfFillOnArea.png) dfFillOnArea
-Creates a deposition / mound within a boundary curve
-
-|Inputs|Description|
-|-|-|
-|df|Docofossor list of Z-values to work on
-|crv|The boundary curve
-|mxh|Maximum height
-|sa|Slope angle
-|__Output__||
-|df|The Docofossor list of grid-dimensions and Z-values
-|vol|The volume delta
-
-#### ![img](/img/icons/dfCutVolumeOnArea.png) dfCutVolumeOnArea
->coming soon
-
-#### ![img](/img/icons/dfFillVolumeOnArea.png) dfFillVolumeOnArea
-Creates a volume deposition within a boundary curve.
-
-|Inputs|Description|
-|-|-|
-|df|Docofossor list to work on
-|crv|The boundary curve
-|mxh|Maximum height
-|sa|Slope angle
-|__Output__||
-|df|Docofossor list of grid-dimensions and Z-values
-|vol|The volume delta
 
 ### Absolute Operations
 
