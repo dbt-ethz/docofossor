@@ -240,6 +240,8 @@ Crops the grid to a curve (bounding box), for faster operation
 |__Output__||
 |df|The new Docofossor list of grid-dimensions and Z-values
 
+![img](/img/dfGridRegion.jpg) 
+
 #### ![img](/img/dfGridSmooth.png) dfGridSmooth
 Smoothens a landscape by applying a 2D Gaussian convolution kernel.
 
@@ -266,6 +268,8 @@ Creates a cut on a point as a sine curve.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfCutOnPoint.jpg) 
+
 #### ![img](/img/dfFillOnPoint.png) dfFillOnPoint
 Creates a fill on a point as a sine curve.
 
@@ -278,6 +282,8 @@ Creates a fill on a point as a sine curve.
 |__Output__||
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
+
+![img](/img/dfFillOnPoint.jpg) 
 
 #### ![img](/img/dfCutOnPath.png) dfCutOnPath
 Creates a relative cut along a path curve.
@@ -293,6 +299,8 @@ sa: Slope angle (default = 33 degrees)
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfCutOnPath.jpg) 
+
 #### ![img](/img/dfFillOnPath.png) dfFillOnPath
 Creates a relative fill along a path curve.
 
@@ -307,6 +315,8 @@ sa: Slope angle (default = 33 degrees)
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfFillOnPath.jpg) 
+
 #### ![img](/img/dfCutOnArea.png) dfCutOnArea
 Creates a relative cut within a boundary curve.
 
@@ -320,6 +330,8 @@ Creates a relative cut within a boundary curve.
 |df|The Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfCutOnArea.jpg) 
+
 #### ![img](/img/dfFillOnArea.png) dfFillOnArea
 Creates a relative fill within a boundary curve.
 
@@ -332,6 +344,8 @@ Creates a relative fill within a boundary curve.
 |__Output__||
 |df|The Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
+
+![img](/img/dfFillOnArea.jpg) 
 
 ### Operations Absolute
 
@@ -348,6 +362,8 @@ Creates an excavation in a point as a sine curve (absolute).
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfCutInPoint.jpg) 
+
 #### ![img](/img/dfFillInPoint.png) dfFillInPoint
 Creates a deposition in a point (absolute).
 
@@ -360,6 +376,8 @@ Creates a deposition in a point (absolute).
 |__Output__||
 |df|The Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
+
+![img](/img/dfFillInPoint.jpg) 
 
 #### ![img](/img/dfCutFillInPath.png) dfCutFillInPath
 Creates a trapezoidal cut and fill along path curves.
@@ -375,6 +393,8 @@ Creates a trapezoidal cut and fill along path curves.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The balanced volume delta
 
+![img](/img/dfCutFillInPath.jpg) 
+
 #### ![img](/img/dfCutInPath.png) dfCutInPath
 Creates a trapezoidal cut along path curves.
 
@@ -388,6 +408,8 @@ Creates a trapezoidal cut along path curves.
 |__Output__||
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
+
+![img](/img/dfCutInPath.jpg) 
 
 #### ![img](/img/dfFillInPath.png) dfFillInPath
 Creates a trapezoidal fill along path curves.
@@ -403,6 +425,8 @@ Creates a trapezoidal fill along path curves.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfFillInPath.jpg) 
+
 #### ![img](/img/dfCutFillInSurface.png) dfCutFillInSurface
 Fits the landscape to a given surface by pulling the points (both cut and fill) and connects to the surrounding terrain using a slope.
 
@@ -415,6 +439,8 @@ Fits the landscape to a given surface by pulling the points (both cut and fill) 
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
 |vol|The balanced volume delta
+
+![img](/img/dfCutFillInSurface.jpg) 
 
 #### ![img](/img/dfCutInSurface.png) dfCutInSurface
 Fits the landscape to a given surface by pulling the points (cut) and connects to the surrounding terrain using a slope.
@@ -429,6 +455,8 @@ Fits the landscape to a given surface by pulling the points (cut) and connects t
 |df|The new list of grid-dimensions and Z-values
 |vol|The balanced volume delta
 
+![img](/img/dfCutInSurface.jpg) 
+
 #### ![img](/img/dfFillInSurface.png) dfFillInSurface
 Fits the landscape to a given surface by pulling the points (fill) and connects to the surrounding terrain using a slope.
 
@@ -441,6 +469,8 @@ Fits the landscape to a given surface by pulling the points (fill) and connects 
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
 |vol|The balanced volume delta
+
+![img](/img/dfFillInSurface.jpg) 
 
 ### Generative
 
@@ -457,6 +487,8 @@ Volumentric displacement using Perlin Noise.
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
 
+![img](/img/dfNoise.jpg) 
+
 #### ![img](/img/dfSinewave.png) dfSineWave
 Volumentric displacement by a sine formula.
 
@@ -469,6 +501,8 @@ Volumentric displacement by a sine formula.
 |s|The smoothing distance from the curve (Default = 8)
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
+
+![img](/img/dfSineWave.jpg) 
        
 ### Analysis
 
@@ -487,6 +521,8 @@ Calculates the shortest path between to points.
 |dsts|list of distance values for each cell to the target.
 |route|a list of tuples along the path, format: (distance, ix, iy)
 
+![img](/img/dfShortestPath.jpg) 
+
 #### ![img](/img/dfSlopeVector.png) dfSlopeVector
 Calculates the gradient direction vectors.
 
@@ -495,6 +531,8 @@ Calculates the gradient direction vectors.
 |df|Docofossor list of grid-dimensions and z-values to work on
 |__Output__||
 |a|List of gradient vectors, magnitude corresponding to slope
+
+![img](/img/dfSlopeVector.jpg) 
 
 #### ![img](/img/dfViewshed.png) dfViewshed
 Analyses the visibilty (3d viewshed) from a given start point.
@@ -508,6 +546,8 @@ Analyses the visibilty (3d viewshed) from a given start point.
 |va|List of visibilities (Boolean) for each point.
 |spt|Point object indicating the actual position used for calculation (debugging).
 
+![img](/img/dfViewshed.jpg) 
+
 ### Geometry
 
 #### ![img](/img/dfGridMesh.png) dfGridMesh
@@ -520,6 +560,8 @@ Creates a mesh of quads on the point grid.
 |__Output__||
 |m|The newly created mesh
 
+![img](/img/dfGridMesh.jpg) 
+
 #### ![img](/img/dfGridPoints.png) dfGridPoints
 
 Creates points from z values and grid dimensions
@@ -529,3 +571,5 @@ Creates points from z values and grid dimensions
 |df|Docofossor list to work on
 |__Output__||
 |pts|The points (x,y,z)
+
+![img](/img/dfGridPoints.jpg) 
