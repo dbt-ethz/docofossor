@@ -158,6 +158,102 @@ Writes a new XYZ file of the point locations in global coordinates.
 
 ### Grid
 
+#### ![img](/img/dfGridGlobal.png) dfGridGlobal
+Sets the Docofossor grid back to the original global coordinates
+
+|Inputs|Description|
+|-|-|
+|df|The Docofossor list to work on
+|__Output__||
+|df|The Docofossor list in global coordinates
+
+#### ![img](/img/dfGridShift.png) dfGridShift
+Shifts the Docofossor grid in local coordinates. If left blank the grid origin will be set to x=0 and y=0. The original origin is stored and used to restore the grid to global coordinates at export time.
+
+|Inputs|Description|
+|-|-|
+|df|The Docofossor list to work on
+|sx|Shift the origin of the grid in X direction
+|sy|Shift the origin of the grid in Y direction
+|__Output__||
+|df|The Docofossor list with the new origin
+
+#### ![img](/img/icons/dfGridCompare.png) dfGridCompare
+Compares two terrains (lists of Z-values) with each other.
+
+|Inputs|Description|
+|-|-|
+|df1|The first Docofossor list
+|df2|The second Docofossor list to compare with
+|__Output__||
+|cut|The volume added from df1 to df2
+|fill|The volume added from df1 to df2
+|balance|The volume difference
+|df|Docofossor list with difference values (delta landscape)
+
+#### ![img](/img/dfGridInfo.png) dfGridInfo
+
+Outputs grid information data for reference
+
+|Inputs|Description|
+|-|-|
+|df|The Docofossor list
+|__Output__||
+|info|Grid information data
+
+#### ![img](/img/dfGridAddition.png) dfGridAddition
+Adds two Docofossor distance fields together
+
+|Inputs|Description|
+|-|-|
+|df|The original Dofofossor distance field
+|df_add|The Docofossor distance field to add
+|__Output__||
+|df|The new Docofossor distance field
+
+#### ![img](/img/dfGridFilter.png) dfGridFilter
+Filters a list of Z-values to include only every n-th row and column
+
+|Inputs|Description|
+|-|-|
+|df|The Docofossor list to work on
+|n|Number of rows and columns to skip (every n-th r/c)
+|__Output__||
+|df|The new Docofossor list of grid-dimensions and Z-values
+
+#### ![img](/img/dfGridInterpolation.png) dfGridInterpolation
+Increases the resolution of the Docofossor distance field by 2, using linear interpolation
+
+|Inputs|Description|
+|-|-|
+|df|The Docofossor distance field
+|__Output__||
+|df|The Docofossor distance field in 2x resolution
+
+#### ![img](/img/dfGridRegion.png) dfGridRegion
+Crops the grid to a curve (bounding box), for faster operation
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list of grid-dimensions and Z-values to work on
+|crv|The curve to crop the grid
+|__Output__||
+|df|The new Docofossor list of grid-dimensions and Z-values
+
+#### ![img](/img/icons/dfGridSmooth.png) dfGridSmooth
+Smoothens a landscape by applying a 2D Gaussian convolution kernel.
+
+|Inputs|Description|
+|-|-|
+|df|Docofossor list of grid-dimensions and Z-values to work on
+|rad|The radius of the kernel (5 if not specified)
+|__Output__||
+|df|The new Docofossor list of grid-dimensions and z-values
+
+
+        
+        
+
 ### Operations Relative
 
 ### Operations Absolute
@@ -195,65 +291,14 @@ Writes a new XYZ file of the point locations in global coordinates.
 
 
 
-#### ![img](/img/icons/dfGridFilter.png) dfGridFilter
-Filters a list of Z-values to include only every n-th row and column
 
-|Inputs|Description|
-|-|-|
-|df|The Docofossor list to work on
-|n|Number of rows and columns to skip (every n-th r/c)
-|__Output__||
-|df|The new Docofossor list of grid-dimensions and Z-values
 
-#### ![img](/img/icons/dfGridRegion.png) dfGridRegion
-Crops the grid to a curve, for faster operation
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list of grid-dimensions and Z-values to work on
-|crv|The curve to crop the grid
-|__Output__||
-|df|The new Docofossor list of grid-dimensions and Z-values
 
-#### ![img](/img/icons/dfGridInfo.png) dfGridInfo
 
-Outputs grid information data for reference
 
-|Inputs|Description|
-|-|-|
-|df|The Docofossor list
-|__Output__||
-|info|Grid information data
 
-#### ![img](/img/icons/dfGridSmooth.png) dfGridSmooth
-Smoothens a landscape by applying a 2D Gaussian convolution kernel.
 
-|Inputs|Description|
-|-|-|
-|df|Docofossor list of grid-dimensions and Z-values to work on
-|rad|The radius of the kernel (5 if not specified)
-|__Output__||
-|df|The new Docofossor list of grid-dimensions and z-values
-
-#### ![img](/img/icons/dfGridShift.png) dfGridShift
-Shifts the Docofossor grid in local coordinates. If left blank the grid origin will be set to x=0 and y=0. The original origin is stored and used to restore the grid to global coordinates at export time.
-
-|Inputs|Description|
-|-|-|
-|df|The Docofossor list to work on
-|sx|Shift the origin of the grid in X direction
-|sy|Shift the origin of the grid in Y direction
-|__Output__||
-|df|The Docofossor list with the new origin
-
-#### ![img](/img/icons/dfGridGlobal.png) dfGridGlobal
-Sets the Docofossor grid back to the original global coordinates
-
-|Inputs|Description|
-|-|-|
-|df|The Docofossor list to work on
-|__Output__||
-|df|The Docofossor list in global coordinates
 
 
 
@@ -421,17 +466,7 @@ Fits the landscape to a given surface by pulling the points (both cut and fill) 
 
 ### Analysis
 
-#### ![img](/img/icons/dfGridCompare.png) dfGridCompare
-Compares two terrains (lists of Z-values) with each other.
 
-|Inputs|Description|
-|-|-|
-|df1|The first Docofossor list
-|df2|The second Docofossor list to compare with
-|__Output__||
-|deposition|The volume added from lz1 to lz2
-|excavation|The volume subtracted from lz1 to lz2
-|df|Docofossor list with difference values (delta landscape)
 
 #### ![img](/img/icons/dfShortestPath.png) dfShortestPath
 
