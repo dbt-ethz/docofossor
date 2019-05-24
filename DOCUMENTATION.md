@@ -266,6 +266,8 @@ Creates a cut on a point as a sine curve.
 |df|Docofossor list of grid-dimensions and Z-values
 |vol|The volume delta
 
+![img](/img/dfCutOnPoint.jpg) 
+
 #### ![img](/img/dfFillOnPoint.png) dfFillOnPoint
 Creates a fill on a point as a sine curve.
 
