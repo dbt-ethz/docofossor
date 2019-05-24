@@ -12,7 +12,7 @@ Docofossor is a collection of landscape modeling components in 2.5D with distanc
 * [Rhinoceros 3D 6.0](http://www.rhino3d.com/)
 
 ### Installation
-`In the grasshopper window, go to file > special folders > components, then copy the .ghpy file there`
+In the grasshopper window, go to `file > special folders > components` then copy the .ghpy file there`
 
 [toolbar]: /img/df_toolbar.png "Docofossor Toolbar"
 
