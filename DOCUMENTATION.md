@@ -457,7 +457,7 @@ Volumentric displacement using Perlin Noise.
 |__Output__||
 |df|The new list of grid-dimensions and Z-values
 
-#### ![img](/img/dfSineWave.png) dfSineWave
+#### ![img](/img/dfSinewave.png) dfSineWave
 Volumentric displacement by a sine formula.
 
 |Inputs|Description|
