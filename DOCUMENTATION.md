@@ -51,7 +51,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
   * [dfGridGlobal](#-dfgridglobal)
   * [dfGridCompare](#-dfgridcompare)
   * [dfGridInfo](#-dfgridinfo)
-  * [dfGridAddition](#-dfgridaddition
+  * [dfGridAddition](#-dfgridaddition)
   * [dfGridFilter](#-dfgridfilter)
   * [dfGridInterpolation](#-dfgridinterpolation)
   * [dfGridRegion](#-dfgridregion)
@@ -90,7 +90,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
 
 ### I/O
 
-#### ![img](/img/icons/dfEmptyGrid.png "jh") dfEmptyGrid
+#### ![img](/img/dfEmptyGrid.png "jh") dfEmptyGrid
 Creates an empty grid of Z-values and returns the list and the dimensions
 
 |Inputs|Description|
@@ -104,7 +104,7 @@ Creates an empty grid of Z-values and returns the list and the dimensions
 |__Output__||
 |df|The Docofossor list of grid-dimensions and Z-values
 
-#### ![img](/img/icons/dfImportDF.png "jh") dfImportDF
+#### ![img](/img/dfImportDF.png "jh") dfImportDF
 
 Reads the distance field from a Docofossor data file (.df).
 
@@ -112,12 +112,10 @@ Reads the distance field from a Docofossor data file (.df).
 |-|-|
 |f|The filepath to the df-file
 |n|Number of rows and columns to skip (every n-th r/c)
-|sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
-|sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
 |__Output__||
 |df|The Docofossor list
 
-#### ![img](/img/icons/dfImportPoints.png "jh") dfImportPoints
+#### ![img](/img/dfImportPoints.png "jh") dfImportPoints
 
 Creates the Docofossor distance field from points on a regular grid.
 
