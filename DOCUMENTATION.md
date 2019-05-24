@@ -2,7 +2,7 @@
 
 ## Docofossor list format
 
-The Docofossor format is used to calculate boolean operations within the 2.5D distance field. Docofossor's data structure is based on a single list that defines a regular spaced quad grid from topographic data. The Docofossor list `df[]` consist of a header part (dimension list) that defines the properties of the grid such as the cell size, the number of rows and columns, and the coordinates of the origin of the grid. The header information is followed by z-values coming from a [Digital Terrain Model (DTM)](https://en.wikipedia.org/wiki/Digital_elevation_model) in column-major order starting bottom left. It is roughly based on the [Esri ASCII raster format](http://resources.arcgis.com/en/help/main/10.1/index.html#/Esri_ASCII_raster_format/009t0000000z000000/).
+The Docofossor format is used to calculate boolean operations within the 2.5D distance field. Docofossor's data structure is based on a single list that defines a regular spaced quad grid from topographic data. The Docofossor list `df[]` consist of a header part (dimension list) that defines the properties of the grid such as the cell size, the number of rows and columns, and the coordinates of the origin of the grid. The header information is followed by z-values coming from a [Digital Terrain Model (DTM)](https://en.wikipedia.org/wiki/Digital_elevation_model) in column-major order starting bottom left. 
 
 ## Dimension list
 
@@ -38,67 +38,129 @@ The values after line 10 of the `df[]` list hold the z-values of the digital ter
 
 Docofossor is using IronPython within Rhino Grasshopper to make the calculations. The components are separated in categories in the Grasshopper toolbar. For now, there are five categories comprising *Grid*, *Relative Operations*, *Absolute Operations*, *Analysis*, and *Geometry*. They are made available as a set of open source UserObjects for Grasshopper. Use the list below to jump to the respective component descriptions.
 
-* __Grid__
-  * [dfImportASC](#-dfimportasc)
-  * [dfImportXYZ](#-dfimportxyz)
+* __I/O__
   * [dfEmptyGrid](#-dfemptygrid)
-  * [dfGridFilter](#-dfgridfilter)
-  * [dfGridRegion](#-dfgridregion)
-  * [dfGridInfo](#-dfgridinfo)
-  * [dfGridSmooth](#-dfgridsmooth)
+  * [dfImportDF](#-dfimportdf)
+  * [dfImportPoints](#-dfimportpoints)
+  * [dfImportXYZ](#-dfimportxyz)
+  * [dfExportDF](#-dfexportasc)
+  * [dfExportXYZ](#-dfexportxyz)
+  
+* __Grid__
   * [dfGridShift](#-dfgridshift)
   * [dfGridGlobal](#-dfgridglobal)
-  * [dfExportASC](#-dfexportasc)
-  * [dfExportXYZ](#-dfexportxyz)
+  * [dfGridCompare](#-dfgridcompare)
+  * [dfGridInfo](#-dfgridinfo)
+  * [dfGridAddition](#-dfgridaddition
+  * [dfGridFilter](#-dfgridfilter)
+  * [dfGridInterpolation](#-dfgridinterpolation)
+  * [dfGridRegion](#-dfgridregion)
+  * [dfGridSmooth](#-dfgridsmooth)
 
-* __Relative Operations__
+* __Operations Relative__
   * [dfCutOnPoint](#-dfcutonpoint)
-  * [dfCutOnPath](#-dfcutonpath)
-  * [dfCutOnArea](#-dfcutonarea) (coming soon)
   * [dfFillOnPoint](#-dffillonpoint)
-  * [dfFillOnPath](#-dffillonpath) (coming soon)
+  * [dfCutOnPath](#-dfcutonpath)
+  * [dfFillOnPath](#-dffillonpath)
+  * [dfCutOnArea](#-dfcutonarea)
   * [dfFillOnArea](#-dffillonarea)
-  * [dfCutVolumeOnArea](#-dfcutvolumeonpoint) (coming soon)
-  * [dfFillVolumeOnArea](#-dffillvolumeonarea)
 
-* __Absolute Operations__
+* __Operations Absolute__
   * [dfCutInPoint](#-dfcutinpoint)
-  * [dfCutInPath](#-dfcutinpath)
-  * [dfCutInPaths](#-dfcutinpaths)
-  * [dfCutInSurface](#-dfcutinsurface) (coming soon)
   * [dfFillInPoint](#-dffillinpoint)
-  * [dfFillInPath](#-dffillinpath) (coming soon)
-  * [dfFillInSurface](#-dffillinsurface) (coming soon)
-  * [dfCutFillInPath](#-dfcutfillinpath) (coming soon)
+  * [dfCutFillInPath](#-dfcutfillinpath) 
+  * [dfCutInPath](#-dfcutinpath)
+  * [dfFillInPath](#-dffillinpath) 
   * [dfCutFillInSurface](#dfcutfillinsurface)
+  * [dfCutInSurface](#-dfcutinsurface)
+  * [dfFillInSurface](#-dffillinsurface) 
+
+* __Generative__
+  * [dfNoise](#-dfnoise)
+  * [dfSineWave](#-dfsinewave)
 
 * __Analysis__
-  * [dfGridCompare](#-dfgridcompare)
   * [dfShortestPath](#-dfshortestpath)
-  * [dfSlopeGradientVector](#-dfslopegradientvector)
+  * [dfSlopeVector](#-dfslopevector)
   * [dfViewshed](#-dfviewshed)
-  * [dfHeightmapShader](#-dfheightmapshader)
-  * [dfHillShader](#-dfhillshader)
-  * [dfSlopeShader](#-dfslopeshader)
 
 * __Geometry__
   * [dfGridMesh](#-dfgridmesh)
   * [dfGridPoints](#-dfgridmesh)
 
-### Grid
+### I/O
 
-#### ![img](/img/icons/dfImportASC.png "jh") dfImportASC
-
-Reads Z-values from an ASC-file.
+#### ![img](/img/icons/dfEmptyGrid.png "jh") dfEmptyGrid
+Creates an empty grid of Z-values and returns the list and the dimensions
 
 |Inputs|Description|
 |-|-|
-|f|The filepath to the asc-file
+|nc|number of columns
+|nr|number of rows
+|ox|offset in X
+|oy|offset in Y
+|cx|cellsize X
+|cy|cellsize Y
+|__Output__||
+|df|The Docofossor list of grid-dimensions and Z-values
+
+#### ![img](/img/icons/dfImportDF.png "jh") dfImportDF
+
+Reads the distance field from a Docofossor data file (.df).
+
+|Inputs|Description|
+|-|-|
+|f|The filepath to the df-file
 |n|Number of rows and columns to skip (every n-th r/c)
 |sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
 |sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
 |__Output__||
 |df|The Docofossor list
+
+#### ![img](/img/icons/dfImportPoints.png "jh") dfImportPoints
+
+Creates the Docofossor distance field from points on a regular grid.
+
+|Inputs|Description|
+|-|-|
+|pts|Points to convert to Docofossor distance field (only ortogonal and regular grid points)
+|__Output__||
+|df|The Docofossor list
+
+
+### Grid
+
+### Operations Relative
+
+### Operations Absolute
+
+### Generative
+
+### Analysis
+
+### Geometry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************************************************************************************************
+
+
+
+
+
 
 #### ![img](/img/icons/dfImportXYZ.png "jh") dfImportXYZ
 
@@ -114,19 +176,7 @@ The *Import XZY* component imports a text file to a *df* list that has topograph
 |df|The Docofossor list
 
 
-#### ![img](/img/icons/dfEmptyGrid.png "jh") dfEmptyGrid
-Creates an empty grid of Z-values and returns the list and the dimensions
 
-|Inputs|Description|
-|-|-|
-|nc|number of columns
-|nr|number of rows
-|ox|offset in X
-|oy|offset in Y
-|cx|cellsize X
-|cy|cellsize Y
-|__Output__||
-|df|The Docofossor list of grid-dimensions and Z-values
 
 #### ![img](/img/icons/dfGridFilter.png) dfGridFilter
 Filters a list of Z-values to include only every n-th row and column
