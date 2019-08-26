@@ -14,7 +14,7 @@ Docofossor is a collection of landscape modeling components in 2.5D with distanc
 ### Installation
 In the grasshopper window, go to `file > special folders > components` then copy the .ghpy file there
 
-![Docofossor Toolbar][df_toolbar.png]
+![Docofossor Toolbar](df_toolbar.png)
 
 
 
