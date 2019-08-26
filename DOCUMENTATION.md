@@ -518,8 +518,8 @@ Calculates the shortest path between to points.
 |c|type of neighborhood, allowed moves. 1 > 4 neighbors sharing an edge. 2 > 8 neighbors sharing a vertex
 |f|factor to multiply height difference (0=no influence)
 |__Output__||
-|dsts|list of distance values for each cell to the target.
-|route|a list of tuples along the path, format: (distance, ix, iy)
+|dst|distance traveled.
+|pl|polyline of the route (in 2D)
 
 ![img](/img/dfShortestPath.jpg) 
 
