@@ -40,9 +40,11 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
 
 * __I/O__
   * [dfEmptyGrid](#-dfemptygrid)
+  * [dfImportASC](#-dfimportasc)
   * [dfImportDF](#-dfimportdf)
   * [dfImportPoints](#-dfimportpoints)
   * [dfImportXYZ](#-dfimportxyz)
+  * [dfExportASC](#-dfexportasc)  
   * [dfExportDF](#-dfexportasc)
   * [dfExportXYZ](#-dfexportxyz)
   
@@ -91,7 +93,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
 ### I/O
 
 #### ![img](/img/dfEmptyGrid.png "jh") dfEmptyGrid
-Creates an empty grid of Z-values and returns the list and the dimensions
+Creates an empty grid of Z-values and returns the list and the dimensions.
 
 |Inputs|Description|
 |-|-|
@@ -103,6 +105,18 @@ Creates an empty grid of Z-values and returns the list and the dimensions
 |cy|cellsize Y
 |__Output__||
 |df|The Docofossor list of grid-dimensions and Z-values
+
+#### ![img](/img/dfImportASC.png "jh") dfImportASC
+Reads Z-values from a *.ASC-file.
+    
+|Inputs|Description|
+|-|-|
+|f|The filepath to the asc-file
+|n|Number of rows and columns to skip (every n-th r/c, default is 1)
+|sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|sy|Translates the grid to a lcoal Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|__Output__||
+|df|The Docofossor list
 
 #### ![img](/img/dfImportDF.png "jh") dfImportDF
 
@@ -137,6 +151,14 @@ The *Import XZY* component imports a text file to a *df* list that has topograph
 |sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
 |__Output__||
 |df|The Docofossor list
+
+#### ![img](/img/dfExportASC.png) dfExportASC
+Writes a new .asc file of the point locations in global coordinates.
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|f|The name of the file
+|w|Use a boolean button, set to true to start writing
 
 #### ![img](/img/dfExportDF.png) dfExportDF
 Writes a new .df file containing the dimensions and z-values of the docofossor list in global coordinates.
@@ -518,8 +540,8 @@ Calculates the shortest path between to points.
 |c|type of neighborhood, allowed moves. 1 > 4 neighbors sharing an edge. 2 > 8 neighbors sharing a vertex
 |f|factor to multiply height difference (0=no influence)
 |__Output__||
-|dsts|list of distance values for each cell to the target.
-|route|a list of tuples along the path, format: (distance, ix, iy)
+|dst|distance traveled.
+|pl|polyline of the route (in 2D)
 
 ![img](/img/dfShortestPath.jpg) 
 
