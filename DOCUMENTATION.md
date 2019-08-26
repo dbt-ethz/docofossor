@@ -40,6 +40,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
 
 * __I/O__
   * [dfEmptyGrid](#-dfemptygrid)
+  * [dfImportASC](#-dfimportasc)
   * [dfImportDF](#-dfimportdf)
   * [dfImportPoints](#-dfimportpoints)
   * [dfImportXYZ](#-dfimportxyz)
@@ -91,7 +92,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
 ### I/O
 
 #### ![img](/img/dfEmptyGrid.png "jh") dfEmptyGrid
-Creates an empty grid of Z-values and returns the list and the dimensions
+Creates an empty grid of Z-values and returns the list and the dimensions.
 
 |Inputs|Description|
 |-|-|
@@ -103,6 +104,18 @@ Creates an empty grid of Z-values and returns the list and the dimensions
 |cy|cellsize Y
 |__Output__||
 |df|The Docofossor list of grid-dimensions and Z-values
+
+#### ![img](/img/dfImportASC.png "jh") dfImportASC
+Reads Z-values from a *.ASC-file.
+    
+|Inputs|Description|
+|-|-|
+|f|The filepath to the asc-file
+|n|Number of rows and columns to skip (every n-th r/c, default is 1)
+|sx|Translates the grid to a local X-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|sy|Translates the grid to a lcoal Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
+|__Output__||
+|df|The Docofossor list
 
 #### ![img](/img/dfImportDF.png "jh") dfImportDF
 
