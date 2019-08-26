@@ -22,8 +22,8 @@ In the grasshopper window, go to `file > special folders > components` then copy
 Click here for the full [documentation](/DOCUMENTATION.md) of all the components of Docofossor.
 
 ### Changelog
-
-* May 24, 2019: 'Initial Release of Docofossor v 0.9'
+* August 26, 2019: *v 0.902* Many bug fixes and new .asc file importer and exporter
+* May 24, 2019: *v 0.901* Public Release of Docofossor
 
 ## Authors
 
