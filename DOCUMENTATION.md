@@ -44,6 +44,7 @@ Docofossor is using IronPython within Rhino Grasshopper to make the calculations
   * [dfImportDF](#-dfimportdf)
   * [dfImportPoints](#-dfimportpoints)
   * [dfImportXYZ](#-dfimportxyz)
+  * [dfExportASC](#-dfexportasc)  
   * [dfExportDF](#-dfexportasc)
   * [dfExportXYZ](#-dfexportxyz)
   
@@ -150,6 +151,14 @@ The *Import XZY* component imports a text file to a *df* list that has topograph
 |sy|Translates the grid to a local Y-origin. The original origin is stored and used to restore the grid to global coordinates at export time.
 |__Output__||
 |df|The Docofossor list
+
+#### ![img](/img/dfExportASC.png) dfExportASC
+Writes a new .asc file of the point locations in global coordinates.
+|Inputs|Description|
+|-|-|
+|df|Docofossor list to work on
+|f|The name of the file
+|w|Use a boolean button, set to true to start writing
 
 #### ![img](/img/dfExportDF.png) dfExportDF
 Writes a new .df file containing the dimensions and z-values of the docofossor list in global coordinates.
