@@ -22,7 +22,8 @@ In the grasshopper window, go to `file > special folders > components` then copy
 Click here for the full [documentation](/DOCUMENTATION.md) of all the components of Docofossor.
 
 ### Changelog
-* September 12, 2019: *v 0.903* Fixed and issue in dfCutInPoint, dfFillInPoint
+* Oktober 21, 2019: *v 0.904* Fixed another issue in dfCutInPoint, dfFillInPoint
+* September 12, 2019: *v 0.903* Fixed an issue in dfCutInPoint, dfFillInPoint
 * August 26, 2019: *v 0.902* Many bug fixes and new .asc file importer and exporter
 * May 24, 2019: *v 0.901* Public Release of Docofossor
 
